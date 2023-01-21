@@ -32,7 +32,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["gerotodolist.up.railway.app", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -57,11 +57,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-
-# SECURE_HSTS_PRELOAD = True
-
-SECURE_HSTS_SECONDS = 3600
 
 SECURE_SSL_REDIRECT = True
 
@@ -70,6 +65,10 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 ROOT_URLCONF = "config.urls"
+
+SECURE_HSTS_SECONDS = 2, 592, 000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
 
 TEMPLATES = [
