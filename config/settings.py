@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["gerotodolist.up.railway.app", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -66,11 +66,13 @@ if not DEBUG:
 
     CSRF_COOKIE_SECURE = True
 
-    ROOT_URLCONF = "config.urls"
+    # ROOT_URLCONF = "config.urls"
 
     SECURE_HSTS_SECONDS = 2, 592, 000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+
+ROOT_URLCONF = "config.urls"
 
 
 TEMPLATES = [
