@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="card border-0">
+    <h3 style="padding-top: 20px;" class="text-center heading-padding-top">What do you want to accomplish today?</h3>
+
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3 justify-content-center">
+                <!-- {{task_form}} to display all -->
+                {{task_form.title}}
+                <!-- to display particular field-->
+                <button type="submit" class="btn btn-primary btn-lg">ADD</button>
+            </div>
+        </form>
+
+
+        <h4 class="bg-warning text-light py-2 rounded text-center">My Tasks:</h4>
+
+
+
+        <ul class="list-group">
+
+
+            {% for task in tasks %}
+            <li class="list-group-item list-group-item-action">
+                {% if task.completed == True %}
+                <strike>{{task.title}} </strike>
+                {% else %}
+                {{task.title}}
+                {% endif %}
+
+
+                <div class="float-end">
+                    <a class=" btn btn-sm btn-info" href="{% url 'update_task' task.id %}   ">Update</a>
+                    <a class="btn btn-sm btn-danger" href="{% url 'delete_task' task.id %}">Delete</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+
+
+
+    </div>
+</div>
+{% endblock content %}
