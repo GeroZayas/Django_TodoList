@@ -32,7 +32,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOST = ["web-production-a8a9.up.railway.app", "*"]
+ALLOWED_HOST = ["gerotodolist.up.railway.app"]
 
 
 # Application definition
