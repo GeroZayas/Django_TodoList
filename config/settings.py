@@ -38,11 +38,11 @@ if not DEBUG:
         "http://gerotodolist.up.railway.app/",
     ]
 
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False
 
     SESSION_COOKIE_SECURE = True
 
-    CSRF_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = True
 
     SECURE_HSTS_SECONDS = 2, 592, 000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
