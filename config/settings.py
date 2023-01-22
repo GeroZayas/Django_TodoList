@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = []
+    CSRF_TRUSTED_ORIGINS = ["https://gerotodolist.up.railway.app/"]
 
     SECURE_SSL_REDIRECT = True
 
