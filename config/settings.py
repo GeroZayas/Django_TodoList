@@ -33,7 +33,10 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = False
 
 if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = ["https://gerotodolist.up.railway.app/"]
+    CSRF_TRUSTED_ORIGINS = [
+        "https://gerotodolist.up.railway.app/",
+        "http://gerotodolist.up.railway.app/",
+    ]
 
     SECURE_SSL_REDIRECT = True
 
