@@ -32,6 +32,19 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+if not DEBUG:
+    # CSRF_TRUSTED_ORIGINS = ["https://gerotodolist.up.railway.app/"]
+
+    # SECURE_SSL_REDIRECT = True
+
+    SESSION_COOKIE_SECURE = True
+
+    CSRF_COOKIE_SECURE = True
+
+    SECURE_HSTS_SECONDS = 2, 592, 000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
 ALLOWED_HOSTS = ["*"]
 
 
@@ -57,20 +70,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-if not DEBUG:
-    # CSRF_TRUSTED_ORIGINS = ["https://gerotodolist.up.railway.app/"]
-
-    SECURE_SSL_REDIRECT = True
-
-    SESSION_COOKIE_SECURE = True
-
-    CSRF_COOKIE_SECURE = True
-
-    # ROOT_URLCONF = "config.urls"
-
-    SECURE_HSTS_SECONDS = 2, 592, 000
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
 
 ROOT_URLCONF = "config.urls"
 
