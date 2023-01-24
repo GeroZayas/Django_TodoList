@@ -1,10 +1,13 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import TaskForm
 from .models import Task
-from django.views.decorators.csrf import ensure_csrf_cookie
+
+# from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.csrf import csrf_protect
 
 # Create your views here.
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
+@csrf_protect
 def index(request):
     form = TaskForm()
     if request.method == "POST":
@@ -18,7 +21,8 @@ def index(request):
     return render(request, "index.html", {"task_form": form, "tasks": tasks})
 
 
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
+@csrf_protect
 def update_task(request, pk):
     # pk -> primary key
     task = Task.objects.get(id=pk)
@@ -34,7 +38,8 @@ def update_task(request, pk):
     return render(request, "update_task.html", {"task_edit_form": form})
 
 
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
+@csrf_protect
 def delete_task(request, pk):
     task = Task.objects.get(id=pk)
     task.delete()
