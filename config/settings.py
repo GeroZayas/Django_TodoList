@@ -36,6 +36,8 @@ if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
         "https://gerotodolist.up.railway.app/",
         "http://gerotodolist.up.railway.app/",
+        "https://*.railway.app",
+        "http://*.railway.app",
     ]
 
     SECURE_SSL_REDIRECT = False
