@@ -1,0 +1,14 @@
+body {
+  font-family: "Sono", sans-serif;
+  /* background-color: #fff7e0; */
+  background-image: url("../images/1.0cd995bd139b.png");
+  padding-top: 10px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+h1 {
+  color: #110b11;
+}
