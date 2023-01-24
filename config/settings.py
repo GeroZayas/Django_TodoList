@@ -32,7 +32,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG:
+if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
         "https://gerotodolist.up.railway.app/",
         "http://gerotodolist.up.railway.app/",
@@ -104,8 +104,14 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "djangotodolist",
+        "USER": "gerozayas",
+        "PASSWORD": "Clavegerozayas7",
+        "HOST": "localhost",
+        "PORT": "5433",
     }
 }
 
