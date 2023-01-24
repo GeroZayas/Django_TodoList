@@ -107,16 +107,16 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 
 DATABASES = {
-    # "default": {
-    #     # "ENGINE": "django.db.backends.sqlite3",
-    #     # "NAME": BASE_DIR / "db.sqlite3",
-    #     "ENGINE": env("ENGINE"),
-    #     "NAME": env("NAME"),
-    #     "USER": env("USER"),
-    #     "PASSWORD": env("PASSWORD"),
-    #     "HOST": env("HOST"),
-    #     "PORT": env("PORT"),
-    # }
+    "gerosqlite": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": env("ENGINE"),
+        # "NAME": env("NAME"),
+        # "USER": env("USER"),
+        # "PASSWORD": env("PASSWORD"),
+        # "HOST": env("HOST"),
+        # "PORT": env("PORT"),
+    },
     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
