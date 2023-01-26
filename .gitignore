@@ -1,2 +1,10 @@
 todolist_venv/
 .env
+
+
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
