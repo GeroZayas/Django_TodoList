@@ -29,6 +29,9 @@
                 <strike>{{task.title}} </strike>
                 {% else %}
                 {{task.title}}
+                <div class="img">
+                    <img src="{{ task.image.url }}" alt="{{task.title}}" style="max-width: 200px;">
+                </div>
                 {% endif %}
 
 
@@ -43,6 +46,11 @@
 
 
 
+    </div>
+    <div class="images">
+        <!-- 
+        {% for image in task.image %}
+        {% endfor %} -->
     </div>
 </div>
 {% endblock content %}
